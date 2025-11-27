@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+/* Smooth transitions for dark mode */
+html {
+    scroll-behavior: smooth;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #555;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+/* Tool card hover effect */
+.tool-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Layout helpers for navbar/footer web components */
+custom-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+custom-footer {
+    margin-top: auto;
+}
+
+/* Fallback display for custom elements */
+custom-navbar, custom-footer {
+    display: block;
+}
+
+/* Navbar visual styles (was inside navbar.js) */
+.navbar-blur {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.dark .navbar-blur {
+    background-color: rgba(17, 24, 39, 0.8);
+}
+
+.nav-link:hover {
+    color: #6366f1;
+}
+
+.dark .nav-link:hover {
+    color: #a5b4fc;
+}
+
+.theme-toggle {
+    transition: all 0.3s ease;
+}
+
+/* Footer visual styles (was inside footer.js) */
+.footer-blur {
+    background-color: rgba(249, 250, 251, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.dark .footer-blur {
+    background-color: rgba(17, 24, 39, 0.8);
+}
+
+.social-icon {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-2px);
+    color: #6366f1;
+}
+
+.dark .social-icon:hover {
+    color: #a5b4fc;
+}
