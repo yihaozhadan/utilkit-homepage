@@ -27,8 +27,62 @@ class DevToolboxUtils {
     }
 }
 
+const ThemeManager = (() => {
+    const root = document.documentElement;
+    const STORAGE_KEY = 'darkMode';
+
+    const applyStoredPreference = () => {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored === 'true') {
+            root.classList.add('dark');
+        } else if (stored === 'false') {
+            root.classList.remove('dark');
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            root.classList.add('dark');
+        }
+    };
+
+    const toggleTheme = () => {
+        const isDark = root.classList.toggle('dark');
+        localStorage.setItem(STORAGE_KEY, isDark);
+    };
+
+    const bindToggleButton = () => {
+        document.addEventListener('click', (event) => {
+            const toggleBtn = event.target.closest('#darkModeToggle');
+            if (!toggleBtn) return;
+            event.preventDefault();
+            toggleTheme();
+        });
+    };
+
+    return {
+        init: () => {
+            applyStoredPreference();
+            bindToggleButton();
+        }
+    };
+})();
+
+const initFeatherIcons = () => {
+    const replaceIcons = () => {
+        if (window.feather && typeof window.feather.replace === 'function') {
+            window.feather.replace();
+        }
+    };
+
+    replaceIcons();
+
+    if (window.customElements) {
+        customElements.whenDefined('custom-navbar').then(replaceIcons);
+        customElements.whenDefined('custom-footer').then(replaceIcons);
+    }
+};
+
 // Initialize all tool functionalities when their sections are loaded
 document.addEventListener('DOMContentLoaded', () => {
+    ThemeManager.init();
+    initFeatherIcons();
     // This would be expanded for each tool's functionality
     // For now, just a placeholder for future implementations
 });

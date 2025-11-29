@@ -5,21 +5,15 @@ class CustomFooter extends HTMLElement {
                 <div class="container mx-auto px-4 py-8">
                     <div class="flex flex-col md:flex-row justify-between items-center">
                         <div class="mb-4 md:mb-0">
-                            <p class="text-gray-600 dark:text-gray-400">&copy; ${new Date().getFullYear()} DevToolbox. All rights reserved.</p>
+                            <p class="text-gray-600 dark:text-gray-400">&copy; ${new Date().getFullYear()} <a href="https://huizhou.dev" target="_blank" rel="noopener noreferrer">Hui Zhou</a>. All rights reserved.</p>
                         </div>
                         
                         <div class="flex space-x-6">
-                            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="social-icon text-gray-600 dark:text-gray-400">
+                            <a href="https://github.com/yihaozhadan" target="_blank" rel="noopener noreferrer" class="social-icon text-gray-600 dark:text-gray-400">
                                 <i data-feather="github"></i>
                             </a>
-                            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" class="social-icon text-gray-600 dark:text-gray-400">
+                            <a href="https://linkedin.com/in/huizhou1" target="_blank" rel="noopener noreferrer" class="social-icon text-gray-600 dark:text-gray-400">
                                 <i data-feather="linkedin"></i>
-                            </a>
-                            <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" class="social-icon text-gray-600 dark:text-gray-400">
-                                <i data-feather="twitter"></i>
-                            </a>
-                            <a href="mailto:your.email@example.com" class="social-icon text-gray-600 dark:text-gray-400">
-                                <i data-feather="mail"></i>
                             </a>
                         </div>
                     </div>
